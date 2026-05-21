@@ -1,6 +1,6 @@
 # Platform Design System
 
-GitHub repository: `DesignSystemUI`
+GitHub repository: `Platform.DesignSystem`
 
 Local workspace folder: `Platform.DesignSystem`
 
