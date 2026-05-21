@@ -17,6 +17,7 @@
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
     "dev:sandbox": "vite sandbox"
   },
   "exports": {
