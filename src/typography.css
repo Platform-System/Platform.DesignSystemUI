@@ -1,0 +1,44 @@
+/* Custom Font Variables/Aliases */
+:root {
+  --font-sans: var(--font-plus-jakarta), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font-serif: var(--font-playfair), serif;
+}
+
+/* Typography CSS Utilities */
+.ds-hero-title {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, var(--foreground, #020617) 0%, rgba(51, 65, 85, 0.9) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ds-section-title {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ds-uppercase-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.7em;
+  text-transform: uppercase;
+}
+
+/* Keyframes and classes for global loading bar */
+@keyframes progress-fast {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-progress-fast {
+  animation: progress-fast 0.8s ease-in-out infinite;
+}

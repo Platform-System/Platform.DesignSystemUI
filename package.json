@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Shared design tokens, CSS utilities, theme provider, and base styles for all Platform UI projects",
   "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "src",
     "dist",
@@ -16,10 +16,14 @@
   "scripts": {
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json",
+    "dev:sandbox": "vite sandbox"
   },
   "exports": {
-    ".": "./src/index.ts",
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./src/index.ts"
+    },
     "./tokens.css": "./src/tokens.css",
     "./scrollbar.css": "./src/scrollbar.css",
     "./base.css": "./src/base.css",
@@ -85,7 +89,12 @@
     "./components/sonner": "./src/components/sonner.tsx",
     "./hooks/use-mobile": "./src/hooks/use-mobile.ts",
     "./hooks/use-toast": "./src/hooks/use-toast.ts",
-    "./components/use-mobile": "./src/components/use-mobile.tsx"
+    "./components/use-mobile": "./src/components/use-mobile.tsx",
+    "./components/custom-cursor": "./src/components/custom-cursor.tsx",
+    "./components/pill-toggle": "./src/components/pill-toggle.tsx",
+    "./components/global-loading-bar": "./src/components/global-loading-bar.tsx",
+    "./components/filter-bar": "./src/components/filter-bar.tsx",
+    "./components/empty-state-panel": "./src/components/empty-state-panel.tsx"
   },
   "peerDependencies": {
     "@radix-ui/react-alert-dialog": ">=1",
@@ -183,7 +192,9 @@
     "tailwind-merge": "^3.5.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "vite": "^6.0.0",
+    "@vitejs/plugin-react": "^4.3.0"
   }
 }
 

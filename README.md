@@ -2,7 +2,7 @@
 
 GitHub repository: `Platform.DesignSystemUI`
 
-Local workspace folder: `Platform.DesignSystemUI`
+Local workspace folder: `Platform.DesignUI`
 
 Published package/import path: `@platform/design-system`
 
@@ -16,6 +16,7 @@ This package is the source of truth for:
 - theme provider and theme hooks
 - generic primitives and reusable UI building blocks
 - shared utility hooks tied to the design system
+- cross-app UI behavior such as loading button states and semantic badge states
 
 This package should **not** own:
 
@@ -93,3 +94,9 @@ Keep a component in the app when:
 2. Consume it directly from apps.
 3. Keep app wrappers thin, temporary, or intentionally app-specific.
 4. Delete dead compatibility wrappers once consumers move over.
+
+## Governance
+
+For shared-vs-local placement, wrapper rules, and theming boundaries, see:
+
+- `DESIGN_SYSTEM_GOVERNANCE.md`

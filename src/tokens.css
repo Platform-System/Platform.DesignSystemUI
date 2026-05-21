@@ -18,9 +18,37 @@
   --ring: #6366f1;
   --destructive: #cb2b2b;
   --destructive-foreground: #ffffff;
+  --success: #059669;
+  --success-foreground: #ffffff;
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --info: #0891b2;
+  --info-foreground: #ffffff;
   --radius: 0.75rem;
   --scrollbar-thumb: rgba(15, 23, 42, 0.12);
   --scrollbar-thumb-hover: rgba(15, 23, 42, 0.25);
+
+  /* Storefront design tokens */
+  --store-accent-rgb: 99 102 241;
+  --store-star-rgb: 250 204 21;
+  --store-accent-soft-alpha: 0.1;
+  --store-accent-soft-hover-alpha: 0.15;
+  --store-accent-glow-alpha: 0.2;
+  --store-accent-glow-subtle-alpha: 0.08;
+  --store-accent-shadow-alpha: 0.25;
+  --store-accent-shadow-strong-alpha: 0.4;
+  
+  --store-surface-rgb: 255 255 255;
+  --store-surface-strong-rgb: 241 245 249;
+  --store-border-rgb: 226 232 240;
+  --store-muted-rgb: 100 116 139;
+  --store-ink-rgb: 15 23 42;
+
+  /* Glassmorphism tokens */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-border-hover: rgba(99, 102, 241, 0.3);
 }
 
 .dark,
@@ -44,6 +72,32 @@
   --ring: #818cf8;
   --destructive: #f87171;
   --destructive-foreground: #0f172a;
+  --success: #34d399;
+  --success-foreground: #052e16;
+  --warning: #fbbf24;
+  --warning-foreground: #451a03;
+  --info: #22d3ee;
+  --info-foreground: #083344;
   --scrollbar-thumb: rgba(255, 255, 255, 0.12);
   --scrollbar-thumb-hover: rgba(255, 255, 255, 0.25);
+
+  /* Storefront design tokens */
+  --store-surface-rgb: 15 23 42;
+  --store-surface-strong-rgb: 7 10 19;
+  --store-border-rgb: 255 255 255;
+  --store-muted-rgb: 148 163 184;
+  --store-ink-rgb: 248 250 252;
+
+  --store-accent-soft-alpha: 0.15;
+  --store-accent-soft-hover-alpha: 0.22;
+  --store-accent-glow-alpha: 0.3;
+  --store-accent-glow-subtle-alpha: 0.12;
+  --store-accent-shadow-alpha: 0.35;
+  --store-accent-shadow-strong-alpha: 0.5;
+
+  /* Glassmorphism tokens */
+  --glass-bg: rgba(15, 23, 42, 0.4);
+  --glass-bg-hover: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(99, 102, 241, 0.4);
 }

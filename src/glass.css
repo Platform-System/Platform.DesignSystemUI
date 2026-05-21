@@ -1,0 +1,43 @@
+.ds-glass-panel {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+.ds-glass-card {
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  background: linear-gradient(135deg, var(--glass-bg) 0%, rgba(255, 255, 255, 0.4) 100%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.02),
+    0 20px 40px -12px rgba(15, 23, 42, 0.05),
+    inset 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.dark .ds-glass-card,
+:root[data-theme="dark"] .ds-glass-card {
+  background: linear-gradient(135deg, var(--glass-bg) 0%, rgba(15, 23, 42, 0.15) 100%);
+}
+
+.ds-glass-card-hover {
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ds-glass-card-hover:hover {
+  transform: translateY(-4px) scale(1.01);
+  background: linear-gradient(135deg, var(--glass-bg-hover) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border-color: var(--glass-border-hover);
+  box-shadow: 
+    0 40px 80px -15px rgba(15, 23, 42, 0.08),
+    inset 0 0 30px rgba(99, 102, 241, 0.05);
+}
+
+.dark .ds-glass-card-hover:hover,
+:root[data-theme="dark"] .ds-glass-card-hover:hover {
+  background: linear-gradient(135deg, var(--glass-bg-hover) 0%, rgba(15, 23, 42, 0.25) 100%);
+  box-shadow: 
+    0 40px 80px -15px rgba(0, 0, 0, 0.4),
+    inset 0 0 30px rgba(99, 102, 241, 0.08);
+}
