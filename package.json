@@ -18,7 +18,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc -p tsconfig.build.json",
     "prepare": "npm run build",
-    "dev:sandbox": "vite sandbox"
+    "dev:sandbox": "vite sandbox",
+    "test": "vitest run"
   },
   "exports": {
     ".": {
@@ -197,7 +198,11 @@
     "typescript-eslint": "^8.59.2",
     "vaul": "^1.1.2",
     "vite": "^6.0.0",
-    "@vitejs/plugin-react": "^4.3.0"
+    "@vitejs/plugin-react": "^4.3.0",
+    "vitest": "^3.0.5",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "jsdom": "^26.0.0"
   }
 }
 
