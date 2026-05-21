@@ -11,24 +11,11 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "typeRoots": [
-      "../Platform.MerchantUI/node_modules/@types",
-      "../Platform.AdminUI/node_modules/@types"
-    ],
     "types": ["react", "react-dom", "node"],
     "baseUrl": ".",
     "paths": {
       "@platform/design-system": ["./src/index.ts"],
-      "@platform/design-system/*": ["./src/*"],
-      "react": ["../Platform.MerchantUI/node_modules/@types/react/index.d.ts"],
-      "react-dom": ["../Platform.MerchantUI/node_modules/@types/react-dom/index.d.ts"],
-      "react/jsx-runtime": ["../Platform.MerchantUI/node_modules/@types/react/jsx-runtime.d.ts"],
-      "react/jsx-dev-runtime": ["../Platform.MerchantUI/node_modules/@types/react/jsx-dev-runtime.d.ts"],
-      "*": [
-        "./src/*",
-        "../Platform.MerchantUI/node_modules/*",
-        "../Platform.AdminUI/node_modules/*"
-      ]
+      "@platform/design-system/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
