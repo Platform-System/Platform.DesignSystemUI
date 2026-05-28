@@ -22,7 +22,7 @@ export const GlobalLoadingBar = React.forwardRef<HTMLDivElement, GlobalLoadingBa
         {...props}
       >
         <div
-          className="h-[2px] animate-progress-fast bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 shadow-[0_0_10px_rgba(34,211,238,0.5)]"
+          className="h-[2px] animate-progress-fast [background:linear-gradient(90deg,var(--info)_0%,var(--primary)_58%,color-mix(in_srgb,var(--primary)_72%,var(--warning))_100%)] shadow-[0_0_10px_rgb(var(--store-accent-rgb)/0.35)]"
           style={{
             width: isPending ? "70%" : "100%",
             transition: "width 0.4s ease-out",

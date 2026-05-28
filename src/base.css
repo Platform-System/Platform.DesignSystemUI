@@ -7,10 +7,7 @@ html:root[data-theme="light"] {
   color-scheme: light;
 }
 
-html.dark,
-html:root[data-theme="dark"] {
-  color-scheme: dark;
-}
+
 
 *,
 *::before,

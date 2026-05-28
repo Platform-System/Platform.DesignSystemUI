@@ -1,103 +1,172 @@
 :root {
+  /* ==========================================
+     BASE SEMANTIC TOKENS
+     ========================================== */
   --background: #ffffff;
-  --foreground: #020617;
+  --foreground: #111111;
   --card: #ffffff;
-  --card-foreground: #020617;
+  --card-foreground: #111111;
   --popover: #ffffff;
-  --popover-foreground: #020617;
-  --primary: #6366f1;
+  --popover-foreground: #111111;
+  --primary: #111111;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --accent: #eef2ff;
-  --accent-foreground: #312e81;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #6366f1;
-  --destructive: #cb2b2b;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #111111;
+  --muted: #f3f3f3;
+  --muted-foreground: #666666;
+  --accent: #f5f5f5;
+  --accent-foreground: #111111;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #8a8a8a;
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --success: #059669;
+  --success: #10b981;
   --success-foreground: #ffffff;
-  --warning: #d97706;
+  --warning: #f59e0b;
   --warning-foreground: #ffffff;
-  --info: #0891b2;
+  --info: #3b82f6;
   --info-foreground: #ffffff;
   --radius: 0.75rem;
-  --scrollbar-thumb: rgba(15, 23, 42, 0.12);
-  --scrollbar-thumb-hover: rgba(15, 23, 42, 0.25);
 
-  /* Storefront design tokens */
-  --store-accent-rgb: 99 102 241;
-  --store-star-rgb: 250 204 21;
-  --store-accent-soft-alpha: 0.1;
-  --store-accent-soft-hover-alpha: 0.15;
-  --store-accent-glow-alpha: 0.2;
-  --store-accent-glow-subtle-alpha: 0.08;
-  --store-accent-shadow-alpha: 0.25;
-  --store-accent-shadow-strong-alpha: 0.4;
-  
+  /* ==========================================
+     SCROLLBAR TOKENS
+     ========================================== */
+  --scrollbar-thumb: rgba(17, 17, 17, 0.22);
+  --scrollbar-thumb-hover: rgba(17, 17, 17, 0.36);
+
+  /* ==========================================
+     STOREFRONT TOKENS (MerchantUI / PortalUI)
+     ========================================== */
+  --store-accent-rgb: 17 17 17;
+  --store-star-rgb: 245 158 11;
+  --store-accent-soft-alpha: 0.05;
+  --store-accent-soft-hover-alpha: 0.1;
+  --store-accent-glow-alpha: 0.15;
+  --store-accent-glow-subtle-alpha: 0.05;
+  --store-accent-shadow-alpha: 0.15;
+  --store-accent-shadow-strong-alpha: 0.25;
+
   --store-surface-rgb: 255 255 255;
-  --store-surface-strong-rgb: 241 245 249;
-  --store-border-rgb: 226 232 240;
-  --store-muted-rgb: 100 116 139;
-  --store-ink-rgb: 15 23 42;
+  --store-surface-strong-rgb: 245 245 245;
+  --store-border-rgb: 229 229 229;
+  --store-muted-rgb: 102 102 102;
+  --store-ink-rgb: 17 17 17;
 
-  /* Glassmorphism tokens */
+  /* ==========================================
+     PREMIUM GRADIENT TOKENS
+     ========================================== */
+  --premium-gradient-start: #111111;
+  --premium-gradient-mid: #4b4b4b;
+  --premium-gradient-end: #8a8a8a;
+  --premium-gradient-glow: rgba(17, 17, 17, 0.18);
+
+  /* ==========================================
+     GLASSMORPHISM TOKENS
+     ========================================== */
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-bg-hover: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.4);
-  --glass-border-hover: rgba(99, 102, 241, 0.3);
-}
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-border-hover: rgba(17, 17, 17, 0.12);
+  --glass-blur: blur(28px);
 
-.dark,
-:root[data-theme="dark"] {
-  --background: #030712;
-  --foreground: #f8fafc;
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
-  --primary: #818cf8;
-  --primary-foreground: #0f172a;
-  --secondary: #111827;
-  --secondary-foreground: #f8fafc;
-  --muted: #0f172a;
-  --muted-foreground: #94a3b8;
-  --accent: #1e1b4b;
-  --accent-foreground: #e0e7ff;
-  --border: rgba(255, 255, 255, 0.12);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: #818cf8;
-  --destructive: #f87171;
-  --destructive-foreground: #0f172a;
-  --success: #34d399;
-  --success-foreground: #052e16;
-  --warning: #fbbf24;
-  --warning-foreground: #451a03;
-  --info: #22d3ee;
-  --info-foreground: #083344;
-  --scrollbar-thumb: rgba(255, 255, 255, 0.12);
-  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.25);
+  /* ==========================================
+     TYPOGRAPHY TOKENS
+     ========================================== */
+  --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-family: var(--font-plus-jakarta);
 
-  /* Storefront design tokens */
-  --store-surface-rgb: 15 23 42;
-  --store-surface-strong-rgb: 7 10 19;
-  --store-border-rgb: 255 255 255;
-  --store-muted-rgb: 148 163 184;
-  --store-ink-rgb: 248 250 252;
+  /* ==========================================
+     TRANSITION TOKENS
+     ========================================== */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --store-accent-soft-alpha: 0.15;
-  --store-accent-soft-hover-alpha: 0.22;
-  --store-accent-glow-alpha: 0.3;
-  --store-accent-glow-subtle-alpha: 0.12;
-  --store-accent-shadow-alpha: 0.35;
-  --store-accent-shadow-strong-alpha: 0.5;
+  /* ==========================================
+     SHADOW TOKENS
+     ========================================== */
+  --shadow-sm: 0 1px 3px rgba(17, 17, 17, 0.03), 0 1px 2px rgba(17, 17, 17, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(17, 17, 17, 0.03), 0 12px 24px -4px rgba(17, 17, 17, 0.05);
+  --shadow-lg: 0 20px 40px -12px rgba(17, 17, 17, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  --shadow-glow: 0 0 20px rgba(17, 17, 17, 0.05);
 
-  /* Glassmorphism tokens */
-  --glass-bg: rgba(15, 23, 42, 0.4);
-  --glass-bg-hover: rgba(15, 23, 42, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-hover: rgba(99, 102, 241, 0.4);
+  /* ==========================================
+     OVERLAY / TRANSPARENT UTILITY TOKENS
+     Dùng cho các element cần overlay mà không hardcode rgba
+     ========================================== */
+  /* Button shadows (dark base) */
+  --shadow-btn-primary: 0 4px 14px rgba(17, 17, 17, 0.22);
+  --shadow-btn-primary-hover: 0 6px 20px rgba(17, 17, 17, 0.3);
+  /* Sidebar overlay khi mobile */
+  --shadow-sidebar-open: 20px 0 40px rgba(0, 0, 0, 0.4);
+  /* Scrollbar cho dark-toned surfaces */
+  --scrollbar-thumb-zinc: rgba(24, 24, 27, 0.3);
+  --scrollbar-thumb-zinc-hover: rgba(24, 24, 27, 0.5);
+  /* Subtle white overlays (glassmorphism fine-tuning) */
+  --overlay-white-2: rgba(255, 255, 255, 0.02);
+  --overlay-white-4: rgba(255, 255, 255, 0.04);
+  --overlay-white-10: rgba(255, 255, 255, 0.10);
+  /* Light beam / shimmer effect (PortalUI decorative) */
+  --overlay-light-beam: rgba(255, 255, 255, 0.2);
+  /* Admin glow/focus shadows — dùng --admin-primary-rgb */
+  --shadow-admin-focus: 0 0 15px rgb(var(--admin-primary-rgb) / 0.18);
+  --shadow-admin-glow-sm: 0 0 15px rgb(var(--admin-primary-rgb) / 0.15);
+  --shadow-admin-glow-lg: 0 0 30px rgb(var(--admin-primary-rgb) / 0.35);
+  --shadow-admin-chart: 0 4px 10px rgb(var(--admin-primary-rgb) / 0.18);
+
+  /* ==========================================
+     ADMIN UI TOKENS
+     ========================================== */
+
+  /* RGB base for rgb()/opacity calculations */
+  --admin-primary-rgb: 17 17 17;
+  --admin-secondary-rgb: 102 102 102;
+
+  /* Background */
+  --admin-bg: var(--background);
+  --admin-bg-gradient: linear-gradient(to bottom right, var(--background), var(--secondary), var(--border));
+
+  /* Header & Search */
+  --admin-header-bg: color-mix(in srgb, var(--card) 75%, transparent);
+  --admin-search-input-bg: color-mix(in srgb, var(--foreground) 4%, transparent);
+  --admin-search-focus-bg: color-mix(in srgb, var(--card) 95%, transparent);
+
+  /* Surfaces & Glassmorphism */
+  --admin-surface: color-mix(in srgb, var(--card) 75%, transparent);
+  --admin-surface-solid: var(--secondary);
+  --admin-surface-hover: color-mix(in srgb, var(--card) 90%, transparent);
+  --admin-surface-strong: color-mix(in srgb, var(--card) 80%, transparent);
+
+  /* Borders */
+  --admin-border: var(--border);
+  --admin-border-hover: color-mix(in srgb, var(--primary) 25%, transparent);
+  --admin-border-focus: color-mix(in srgb, var(--primary) 50%, transparent);
+
+  /* Brand Colors */
+  --admin-primary: var(--primary);
+  --admin-primary-soft: color-mix(in srgb, var(--primary) 6%, transparent);
+  --admin-primary-glow: var(--premium-gradient-glow);
+  --admin-primary-gradient: #0f172a;
+
+  /* Secondary */
+  --admin-secondary: var(--foreground);
+  --admin-secondary-soft: color-mix(in srgb, var(--foreground) 6%, transparent);
+  --admin-secondary-gradient: linear-gradient(135deg, #a1a1aa 0%, #52525b 100%);
+
+  /* Accent / Destructive */
+  --admin-accent: var(--destructive);
+  --admin-accent-soft: color-mix(in srgb, var(--destructive) 6%, transparent);
+
+  /* Text */
+  --admin-text: var(--foreground);
+  --admin-text-muted: var(--muted-foreground);
+  --admin-text-dark: color-mix(in srgb, var(--foreground) 60%, transparent);
+
+  /* Status */
+  --admin-success: var(--success);
+  --admin-success-soft: color-mix(in srgb, var(--success) 8%, transparent);
+  --admin-error: var(--destructive);
+  --admin-error-soft: color-mix(in srgb, var(--destructive) 8%, transparent);
+  --admin-warning: var(--warning);
+  --admin-warning-soft: color-mix(in srgb, var(--warning) 8%, transparent);
 }

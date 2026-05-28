@@ -50,21 +50,19 @@ export const FilterBar = React.forwardRef<HTMLDivElement, FilterBarProps>(
 
     const isInline = variant === "inline"
     const searchInputClassName = cn(
-      "bg-background/80 h-12 border border-[rgb(var(--store-border-rgb)/0.6)] pl-12 text-foreground placeholder:text-muted-foreground/70 focus-visible:border-[rgb(var(--store-accent-rgb)/0.5)] focus-visible:bg-background focus-visible:shadow-[0_0_15px_rgb(var(--store-accent-rgb)/0.08)] transition-all",
+      "ds-filter-bar__input h-12 border border-border bg-background/50 pl-12 text-foreground shadow-none placeholder:text-muted-foreground/70 focus-visible:border-primary/50 focus-visible:bg-background transition-all",
       isInline ? "rounded-2xl" : "rounded-xl"
     )
     const filterWrapperClassName = cn(
-      "bg-background/80 flex h-12 w-full items-center gap-2 border border-[rgb(var(--store-border-rgb)/0.6)] pl-3 pr-2 text-foreground sm:w-56 transition-all hover:border-[rgb(var(--store-border-rgb)/0.8)]",
+      "ds-filter-bar__filter flex h-12 w-full items-center gap-2 border border-border bg-background/50 pl-3 pr-2 text-foreground shadow-none sm:w-56 transition-all",
       isInline ? "rounded-2xl" : "justify-center rounded-xl py-2 sm:justify-start"
     )
     const filterTriggerClassName = cn(
-      "store-surface-soft flex-grow justify-between border-none text-foreground shadow-none focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 [&_svg]:opacity-60",
-      isInline
-        ? "h-9 rounded-xl px-3"
-        : "h-8 rounded-lg px-3"
+      "ds-filter-bar__trigger flex-grow justify-between border-0 bg-transparent text-foreground shadow-none focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 [&_svg]:opacity-60",
+      isInline ? "h-9 rounded-xl px-3" : "h-8 rounded-lg px-3"
     )
     const clearButtonClassName = cn(
-      "store-surface-soft flex h-12 w-full items-center justify-center gap-2 border-none px-4 text-sm text-muted-foreground transition-all duration-200 hover:bg-[rgb(var(--store-accent-rgb)/0.1)] hover:text-foreground sm:w-auto",
+      "ds-filter-bar__clear flex h-12 w-full items-center justify-center gap-2 border-0 bg-transparent px-4 text-sm text-muted-foreground shadow-none transition-all duration-200 hover:bg-[rgb(var(--store-accent-rgb)/0.1)] hover:text-foreground sm:w-auto",
       isInline ? "rounded-2xl" : "rounded-xl"
     )
 
@@ -72,21 +70,23 @@ export const FilterBar = React.forwardRef<HTMLDivElement, FilterBarProps>(
       <div
         ref={ref}
         className={cn(
+          "ds-filter-bar",
+          isInline ? "ds-filter-bar--inline" : "ds-filter-bar--panel",
           isInline
             ? "flex w-full flex-col gap-3 xl:max-w-[620px] xl:flex-row xl:items-center"
-            : "ds-glass-panel flex w-full flex-col items-center justify-between gap-6 rounded-2xl p-6 shadow-xl md:flex-row",
+            : "flex w-full flex-col items-center justify-between gap-4 md:flex-row",
           className
         )}
         {...props}
       >
-        {/* Search */}
-        <div className={cn("w-full flex-grow", isInline && "flex-1")}>
+        <div className={cn("ds-filter-bar__search w-full flex-grow", isInline && "flex-1")}>
           <Input
             type="text"
             placeholder={searchPlaceholder}
             value={searchQuery}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
             startAdornment={<Search className="h-5 w-5" />}
+            wrapperClassName="border-0 shadow-none outline-none"
             endAdornment={searchQuery ? (
               <button
                 type="button"
@@ -97,22 +97,41 @@ export const FilterBar = React.forwardRef<HTMLDivElement, FilterBarProps>(
               </button>
             ) : undefined}
             className={cn(searchInputClassName, searchQuery && "pr-10")}
+            style={{
+              outline: "none",
+              boxShadow: "none",
+              WebkitAppearance: "none",
+              appearance: "none",
+            }}
           />
         </div>
 
-        {/* Filters & Actions */}
         <div
           className={cn(
-            "flex w-full shrink-0 flex-col items-center gap-3 sm:flex-row",
+            "ds-filter-bar__actions flex w-full shrink-0 flex-col items-center gap-3 sm:flex-row",
             isInline ? "xl:w-auto" : "md:w-auto"
           )}
         >
-          {/* Dropdown Filter with Icon */}
-          <div className={filterWrapperClassName}>
+          <div
+            className={filterWrapperClassName}
+            style={{
+              outline: "none",
+              boxShadow: "none",
+            }}
+          >
             <SlidersHorizontal className="h-4 w-4 text-muted-foreground shrink-0" />
             <span className="text-sm font-medium text-muted-foreground hidden sm:inline">Lọc:</span>
             <Select value={activeCategory} onValueChange={setActiveCategory}>
-              <SelectTrigger className={filterTriggerClassName}>
+              <SelectTrigger
+                className={filterTriggerClassName}
+                style={{
+                  border: "none",
+                  outline: "none",
+                  boxShadow: "none",
+                  WebkitAppearance: "none",
+                  appearance: "none",
+                }}
+              >
                 <SelectValue placeholder="Tất cả danh mục" />
               </SelectTrigger>
               <SelectContent className="rounded-xl shadow-xl">
@@ -131,7 +150,6 @@ export const FilterBar = React.forwardRef<HTMLDivElement, FilterBarProps>(
             </Select>
           </div>
 
-          {/* Clear All Button */}
           {(searchQuery || activeCategory !== allCategoryLabel) && (
             <Button
               variant="ghost"

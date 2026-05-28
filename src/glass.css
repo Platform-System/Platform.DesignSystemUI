@@ -8,18 +8,14 @@
 .ds-glass-card {
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  background: linear-gradient(135deg, var(--glass-bg) 0%, rgba(255, 255, 255, 0.4) 100%);
+  background: linear-gradient(135deg, var(--glass-bg) 0%, rgba(255, 255, 255, 0.28) 100%);
   border: 1px solid var(--glass-border);
   box-shadow: 
     0 4px 6px -1px rgba(0, 0, 0, 0.02),
-    0 20px 40px -12px rgba(15, 23, 42, 0.05),
-    inset 0 0 20px rgba(255, 255, 255, 0.5);
+    0 20px 40px -12px rgba(24, 24, 27, 0.05),
+    inset 0 0 20px rgba(255, 255, 255, 0.28);
 }
 
-.dark .ds-glass-card,
-:root[data-theme="dark"] .ds-glass-card {
-  background: linear-gradient(135deg, var(--glass-bg) 0%, rgba(15, 23, 42, 0.15) 100%);
-}
 
 .ds-glass-card-hover {
   transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
@@ -27,17 +23,122 @@
 
 .ds-glass-card-hover:hover {
   transform: translateY(-4px) scale(1.01);
-  background: linear-gradient(135deg, var(--glass-bg-hover) 0%, rgba(255, 255, 255, 0.6) 100%);
+  background: linear-gradient(135deg, var(--glass-bg-hover) 0%, rgba(255, 255, 255, 0.42) 100%);
   border-color: var(--glass-border-hover);
   box-shadow: 
-    0 40px 80px -15px rgba(15, 23, 42, 0.08),
-    inset 0 0 30px rgba(99, 102, 241, 0.05);
+    0 40px 80px -15px rgba(24, 24, 27, 0.08),
+    inset 0 0 30px rgb(var(--store-accent-rgb) / 0.08);
 }
 
-.dark .ds-glass-card-hover:hover,
-:root[data-theme="dark"] .ds-glass-card-hover:hover {
-  background: linear-gradient(135deg, var(--glass-bg-hover) 0%, rgba(15, 23, 42, 0.25) 100%);
-  box-shadow: 
-    0 40px 80px -15px rgba(0, 0, 0, 0.4),
-    inset 0 0 30px rgba(99, 102, 241, 0.08);
+.ds-dark-panel {
+  background-color: var(--color-neutral-900) !important;
+  color: var(--color-neutral-50) !important;
+  border: 1px solid var(--color-neutral-800) !important;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
 }
+
+/* Ensure scrollbars are visible inside dark panels */
+.ds-dark-panel * {
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent !important;
+}
+
+.ds-dark-panel *::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+.ds-dark-panel *::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.ds-dark-panel *::selection {
+  background-color: var(--color-neutral-800) !important;
+  color: var(--color-neutral-50) !important;
+}
+
+.ds-dark-panel .text-foreground,
+.ds-dark-panel h1,
+.ds-dark-panel h2,
+.ds-dark-panel h3,
+.ds-dark-panel h4,
+.ds-dark-panel [data-slot="accordion-trigger"],
+.ds-dark-panel [data-slot="accordion-trigger"] svg {
+  color: var(--color-neutral-50) !important;
+}
+
+.ds-dark-panel input,
+.ds-dark-panel textarea,
+.ds-dark-panel [data-slot="input"],
+.ds-dark-panel [data-slot="textarea"] {
+  background-color: var(--color-neutral-800) !important;
+  color: var(--color-neutral-100) !important;
+  border: 1px solid var(--color-neutral-700) !important;
+  border-radius: 0.75rem !important;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.ds-dark-panel input::placeholder,
+.ds-dark-panel textarea::placeholder {
+  color: var(--color-neutral-500) !important;
+}
+
+.ds-dark-panel input:focus,
+.ds-dark-panel textarea:focus {
+  border-color: var(--color-neutral-400) !important;
+}
+
+.ds-dark-panel .text-muted-foreground,
+.ds-dark-panel label {
+  color: var(--color-neutral-400) !important;
+}
+
+.ds-dark-panel [data-slot="slider-range"] {
+  background-color: var(--color-neutral-50) !important;
+}
+
+.ds-dark-panel [data-slot="slider-track"] {
+  background-color: var(--color-neutral-800) !important;
+}
+
+.ds-dark-panel [data-slot="slider"] [role="slider"] {
+  background-color: var(--color-neutral-50) !important;
+  border-color: var(--color-neutral-900) !important;
+}
+
+.ds-dark-panel button.variant-ghost,
+.ds-dark-panel button[variant="ghost"] {
+  background-color: transparent !important;
+  color: var(--color-neutral-400) !important;
+}
+
+.ds-dark-panel button.variant-ghost:hover,
+.ds-dark-panel button[variant="ghost"]:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: var(--color-neutral-50) !important;
+}
+
+.ds-dark-panel .ds-filter-bar__filter,
+.ds-dark-panel .ds-filter-bar__input {
+  background-color: var(--color-neutral-800) !important;
+  color: var(--color-neutral-100) !important;
+}
+
+.ds-dark-panel .ds-filter-bar__filter span,
+.ds-dark-panel .ds-filter-bar__filter svg,
+.ds-dark-panel svg.lucide-search,
+.ds-dark-panel svg.lucide-sliders-horizontal {
+  color: var(--color-neutral-400) !important;
+}
+
+.ds-dark-panel .store-accent-button {
+  background-color: #ffffff !important;
+  color: var(--color-neutral-950) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.ds-dark-panel .store-accent-button:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+

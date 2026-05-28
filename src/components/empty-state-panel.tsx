@@ -10,6 +10,7 @@ export interface EmptyStatePanelProps extends React.HTMLAttributes<HTMLDivElemen
   description: string
   primaryActionNode?: React.ReactNode
   secondaryActionNode?: React.ReactNode
+  variant?: "default" | "admin"
   panelClassName?: string
   iconClassName?: string
   descriptionClassName?: string
@@ -21,6 +22,7 @@ export function EmptyStatePanel({
   description,
   primaryActionNode,
   secondaryActionNode,
+  variant = "default",
   className,
   panelClassName,
   iconClassName,
@@ -30,7 +32,8 @@ export function EmptyStatePanel({
   return (
     <div
       className={cn(
-        "ds-glass-panel mx-auto flex max-w-2xl flex-col items-center rounded-[32px] px-6 py-20 text-center shadow-[0_16px_48px_rgb(15_23_42/0.1)]",
+        "ds-glass-panel flex w-full max-w-none flex-col items-center rounded-[32px] px-6 py-20 text-center shadow-[0_16px_48px_rgb(0_0_0/0.1)]",
+        variant === "admin" && "admin-empty-panel",
         panelClassName
       )}
       {...props}
@@ -39,7 +42,8 @@ export function EmptyStatePanel({
         <EmptyMedia
           variant="icon"
           className={cn(
-            "store-surface-soft store-muted-text mx-auto flex h-20 w-20 items-center justify-center rounded-full shadow-[0_10px_28px_rgb(15_23_42/0.08)]",
+            "store-surface-soft store-muted-text mx-auto flex h-20 w-20 items-center justify-center rounded-full shadow-[0_10px_28px_rgb(0_0_0/0.08)]",
+            variant === "admin" && "admin-empty-icon",
             iconClassName
           )}
         >

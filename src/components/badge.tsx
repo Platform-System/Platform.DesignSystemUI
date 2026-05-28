@@ -9,6 +9,8 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: 'border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90',
+        counter:
+          'border-transparent bg-[rgb(var(--store-ink-rgb))] text-white shadow-[0_6px_16px_rgb(0_0_0/0.18)]',
         secondary:
           'border-[rgb(var(--store-border-rgb)/0.75)] bg-[rgb(var(--store-surface-rgb)/0.78)] text-[rgb(var(--store-muted-rgb))] [a&]:hover:bg-[rgb(var(--store-accent-rgb)/0.1)] [a&]:hover:text-foreground',
         success: 'border-transparent bg-success text-[var(--success-foreground)] [a&]:hover:opacity-90',

@@ -23,7 +23,7 @@ export function PillToggle({
   return (
     <div
       className={cn(
-        "flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none",
+        "inline-flex h-10 w-full flex-nowrap items-center gap-2 bg-transparent p-0 overflow-x-auto scrollbar-none sm:w-auto",
         className
       )}
       {...props}
@@ -33,10 +33,10 @@ export function PillToggle({
         onClick={() => onItemChange(null)}
         type="button"
         className={cn(
-          "px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer",
+          "flex h-full shrink-0 min-w-[96px] items-center justify-center rounded-xl border border-transparent px-4 text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer",
           activeItem === null || activeItem === "All"
-            ? "bg-primary text-primary-foreground shadow-sm"
-            : "bg-secondary text-muted-foreground hover:bg-primary/10 hover:text-primary"
+            ? "border-[rgb(var(--store-border-rgb)/0.9)] bg-[rgb(var(--store-accent-rgb)/0.05)] text-foreground"
+            : "bg-transparent text-muted-foreground hover:text-foreground"
         )}
       >
         {normalizedAllLabel}
@@ -51,10 +51,10 @@ export function PillToggle({
             onClick={() => onItemChange(item)}
             type="button"
             className={cn(
-              "px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer",
+              "flex h-full shrink-0 min-w-[96px] items-center justify-center rounded-xl border border-transparent px-4 text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer",
               activeItem === item
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "bg-secondary text-muted-foreground hover:bg-primary/10 hover:text-primary"
+                ? "border-[rgb(var(--store-border-rgb)/0.9)] bg-[rgb(var(--store-accent-rgb)/0.05)] text-foreground"
+                : "bg-transparent text-muted-foreground hover:text-foreground"
             )}
           >
             {item}
