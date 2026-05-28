@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { cn } from '../lib/cn'
 
-export interface SectionHeaderProps extends React.ComponentProps<'div'> {
+export interface SectionHeaderProps extends Omit<React.ComponentProps<'div'>, 'title'> {
   title: React.ReactNode
   actions?: React.ReactNode
 }
