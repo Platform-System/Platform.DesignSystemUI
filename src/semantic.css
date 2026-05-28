@@ -1,0 +1,3 @@
+/* Compatibility file for stale Turbopack transforms that cached an older
+   @platform/design-system/index.css importing ./semantic.css. The canonical
+   semantic utilities now live inline in index.css. */
