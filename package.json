@@ -1,7 +1,10 @@
 {
   "name": "@platform/design-system",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "type": "module",
   "description": "Shared design tokens, CSS utilities, theme provider, and base styles for all Platform UI projects",
   "main": "./src/index.ts",
@@ -98,7 +101,15 @@
     "./components/global-loading-bar": "./src/components/global-loading-bar.tsx",
     "./components/filter-bar": "./src/components/filter-bar.tsx",
     "./components/empty-state-panel": "./src/components/empty-state-panel.tsx",
-    "./components/theme-toggle": "./src/components/theme-toggle.tsx"
+    "./components/theme-toggle": "./src/components/theme-toggle.tsx",
+    "./components/action-link": "./src/components/action-link.tsx",
+    "./components/info-panel": "./src/components/info-panel.tsx",
+    "./components/meta-chip": "./src/components/meta-chip.tsx",
+    "./components/record-card": "./src/components/record-card.tsx",
+    "./components/section-header": "./src/components/section-header.tsx",
+    "./components/section-panel": "./src/components/section-panel.tsx",
+    "./components/stat-card": "./src/components/stat-card.tsx",
+    "./components/surface-icon": "./src/components/surface-icon.tsx"
   },
   "peerDependencies": {
     "@radix-ui/react-accordion": ">=1",
