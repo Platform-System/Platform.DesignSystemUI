@@ -289,21 +289,23 @@ export { useToast, toast, reducer } from './hooks/use-toast'
 export { CustomCursor } from './components/custom-cursor'
 export { PillToggle, type PillToggleProps } from './components/pill-toggle'
 export { GlobalLoadingBar, type GlobalLoadingBarProps } from './components/global-loading-bar'
+export { PageShell, type PageShellProps } from './components/page-shell'
 export { FilterBar, type FilterBarProps } from './components/filter-bar'
 export { InfoPanel, type InfoPanelProps } from './components/info-panel'
 export { MetaChip, type MetaChipProps } from './components/meta-chip'
 export { RecordCard, type RecordCardProps } from './components/record-card'
 export { SectionHeader, type SectionHeaderProps } from './components/section-header'
 export { SectionPanel, type SectionPanelProps } from './components/section-panel'
+export { SidebarShell, type SidebarShellProps } from './components/sidebar-shell'
 export { StatCard, type StatCardProps } from './components/stat-card'
 export { SurfaceIcon, type SurfaceIconProps } from './components/surface-icon'
+export { SidebarNavItem, SidebarSectionTrigger, type SidebarNavItemProps, type SidebarSectionTriggerProps } from './components/sidebar-nav'
 export { ActionLink, type ActionLinkProps } from './components/action-link'
+export { AppLinkItem, type AppLinkItemProps } from './components/app-link-item'
+export { BrandMark, type BrandMarkProps } from './components/brand-mark'
 export { EmptyStatePanel, type EmptyStatePanelProps } from './components/empty-state-panel'
+export { OverlayBackdrop, type OverlayBackdropProps } from './components/overlay-backdrop'
+export { TopbarShell, type TopbarShellProps } from './components/topbar-shell'
 export { ThemeToggle, type ThemeToggleProps } from './components/theme-toggle'
-
-// Shared Brand Identity Constants
-export const BRAND_NAME = 'Nyxoris'
-export const BRAND_METADATA = {
-  title: 'Nyxoris',
-  description: 'The official digital atelier of Nyxoris.',
-}
+export { UserIdentity, type UserIdentityProps } from './components/user-identity'
+export { BRAND_NAME, BRAND_METADATA } from './branding'

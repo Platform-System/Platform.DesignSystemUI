@@ -19,10 +19,10 @@ export function SurfaceIcon({
       className={cn(
         'shrink-0 overflow-hidden rounded-2xl flex items-center justify-center',
         size === 'sm' ? 'h-12 w-12' : 'h-14 w-14',
-        tone === 'surface' && 'admin-icon-surface',
-        tone === 'tint' && 'admin-icon-tint',
-        tone === 'warning' && 'admin-icon-warning',
-        elevated && 'admin-icon-elevated',
+        tone === 'surface' && 'surface-icon-shell',
+        tone === 'tint' && 'surface-icon-shell--tint',
+        tone === 'warning' && 'surface-icon-shell--warning',
+        elevated && 'surface-icon-shell--elevated',
         className
       )}
       {...props}

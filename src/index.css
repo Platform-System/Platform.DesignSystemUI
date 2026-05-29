@@ -380,32 +380,32 @@
     background-clip: padding-box, border-box;
   }
 
-  .admin-sidebar-section-trigger {
+  .sidebar-section-trigger {
     color: var(--muted-foreground);
     transition: color 180ms ease;
   }
 
-  .admin-sidebar-section-trigger:hover {
+  .sidebar-section-trigger:hover {
     color: var(--foreground);
   }
 
-  .admin-sidebar-item {
+  .sidebar-nav-item {
     color: var(--muted-foreground);
     transition:
       background-color 180ms ease,
       color 180ms ease;
   }
 
-  .admin-sidebar-item:hover {
+  .sidebar-nav-item:hover {
     background-color: var(--accent);
     color: var(--accent-foreground);
   }
 
-  .admin-sidebar-item--active {
+  .sidebar-nav-item--active {
     color: var(--foreground);
   }
 
-  .admin-sidebar-item-icon {
+  .sidebar-nav-item__icon {
     background-color: var(--muted);
     color: var(--muted-foreground);
     transition:
@@ -415,14 +415,16 @@
       box-shadow 180ms ease;
   }
 
-  .admin-sidebar-item-icon--active {
-    transform: scale(1.05);
-    background-color: rgb(var(--store-accent-rgb) / 0.1);
+  .sidebar-nav-item__icon--active {
+    transform: scale(1.06);
+    background-color: rgb(var(--store-accent-rgb) / 0.18);
     color: rgb(var(--store-accent-rgb));
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+      0 10px 22px rgb(var(--store-accent-rgb) / 0.14),
+      inset 0 0 0 1px rgb(var(--store-accent-rgb) / 0.08);
   }
 
-  .admin-sidebar-chevron {
+  .sidebar-section-trigger__chevron {
     transition:
       transform 180ms ease,
       opacity 180ms ease,
@@ -431,59 +433,66 @@
     color: var(--muted-foreground);
   }
 
-  .admin-sidebar-chevron--expanded {
+  .sidebar-section-trigger__chevron--expanded {
     opacity: 0.8;
     color: rgb(var(--store-accent-rgb));
   }
 
-  .admin-portal-item {
+  .app-link-item {
     color: var(--muted-foreground);
     transition:
       background-color 180ms ease,
       color 180ms ease;
   }
 
-  .admin-portal-item:hover,
-  .admin-portal-item:focus-visible {
+  .app-link-item:hover,
+  .app-link-item:focus-visible {
     background-color: var(--accent);
     color: var(--accent-foreground);
   }
 
-  .admin-portal-item-icon {
+  .app-link-item__icon {
     background-color: var(--muted);
     color: rgb(var(--store-accent-rgb));
   }
 
-  .admin-portal-item-icon--inactive {
+  .app-link-item__icon--inactive {
     background-color: var(--card);
     color: var(--muted-foreground);
   }
 
-  .admin-logout-button {
+  .icon-action-shift {
     transition:
       background-color 180ms ease,
       color 180ms ease,
       transform 180ms ease;
   }
 
-  .admin-logout-button:hover {
+  .icon-action-shift:hover {
     transform: translateX(3px);
   }
 
-  .admin-shell-card {
-    border: 1px solid var(--border);
-    background-color: var(--card);
-    box-shadow: none;
+  .panel-surface {
+    border: 1px solid color-mix(in srgb, var(--border) 88%, var(--foreground) 12%);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--card) 97%, var(--muted) 3%) 0%,
+        color-mix(in srgb, var(--card) 90%, var(--muted) 10%) 100%
+      );
+    box-shadow:
+      var(--shadow-md),
+      inset 0 1px 0 var(--overlay-white-10);
   }
 
-  .admin-header-shell {
+  .topbar-surface {
     border-bottom: 1px solid var(--border);
     background-color: color-mix(in srgb, var(--background) 82%, transparent);
     backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
   }
 
-  .admin-sidebar-shell {
+  .sidebar-surface {
     border-right: 1px solid var(--border);
     background-color: color-mix(in srgb, var(--card) 95%, transparent);
     box-shadow: none;
@@ -494,51 +503,39 @@
       box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .admin-sidebar-shell--open {
+  .sidebar-surface--open {
     box-shadow: var(--shadow-sidebar-open);
   }
 
-  .admin-mobile-overlay {
+  .overlay-backdrop {
     background-color: color-mix(in srgb, var(--foreground) 40%, transparent);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
   }
 
-  .admin-stat-card {
-    border: 1px solid var(--border);
-    background-color: var(--card);
-    box-shadow: none;
-  }
-
-  .admin-stat-icon {
+  .brand-mark-surface {
     border: 1px solid var(--border);
     background-color: var(--card);
     color: var(--foreground);
   }
 
-  .admin-brand-mark {
-    border: 1px solid var(--border);
-    background-color: var(--card);
-    color: var(--foreground);
-  }
-
-  .admin-avatar-image {
+  .user-identity__avatar {
     border: 1px solid var(--border);
     box-shadow: var(--shadow-sm);
   }
 
-  .admin-avatar-fallback {
+  .user-identity__avatar-fallback {
     border: 1px solid var(--border);
     background-color: var(--card);
     color: var(--foreground);
   }
 
-  .admin-presence-dot {
+  .user-identity__presence {
     border: 2px solid var(--background);
     background-color: var(--success);
   }
 
-  .admin-record-card {
+  .record-surface {
     border: 1px solid var(--border);
     background-color: var(--card);
     transition:
@@ -547,88 +544,102 @@
       opacity 180ms ease;
   }
 
-  .admin-record-card:hover {
+  .record-surface:hover {
     border-color: color-mix(in srgb, var(--foreground) 18%, transparent);
   }
 
-  .admin-record-card--warning {
+  .record-surface--warning {
     border-style: dashed;
     border-color: color-mix(in srgb, var(--warning) 30%, transparent);
     opacity: 0.85;
   }
 
-  .admin-record-card--danger {
+  .record-surface--danger {
     border-style: dashed;
     border-color: color-mix(in srgb, var(--destructive) 30%, transparent);
     opacity: 0.85;
   }
 
-  .admin-icon-surface {
+  .surface-icon-shell {
     border: 1px solid var(--border);
     background-color: var(--card);
     color: var(--foreground);
   }
 
-  .admin-icon-tint {
+  .surface-icon-shell--tint {
     border: 1px solid var(--border);
     background-color: rgb(var(--store-accent-rgb) / 0.1);
     color: rgb(var(--store-accent-rgb));
   }
 
-  .admin-icon-warning {
+  .surface-icon-shell--warning {
     border: 1px solid color-mix(in srgb, var(--warning) 20%, transparent);
     background-color: color-mix(in srgb, var(--warning) 10%, transparent);
     color: var(--warning);
   }
 
-  .admin-icon-elevated {
+  .surface-icon-shell--elevated {
     box-shadow: var(--shadow-sm);
   }
 
-  .admin-info-panel {
+  .info-panel-surface {
     border: 1px solid var(--border);
     background-color: color-mix(in srgb, var(--muted) 70%, transparent);
   }
 
-  .admin-info-panel-subtle {
+  .info-panel-surface--subtle {
     border: 1px solid var(--border);
     background-color: color-mix(in srgb, var(--muted) 35%, transparent);
   }
 
-  .admin-meta-chip {
+  .meta-chip-surface {
     border: 1px solid var(--border);
     background-color: transparent;
     color: var(--muted-foreground);
   }
 
-  .admin-meta-icon {
+  .meta-icon-accent {
     color: color-mix(in srgb, rgb(var(--store-accent-rgb)) 72%, var(--muted-foreground));
     opacity: 0.85;
   }
 
-  .admin-empty-panel {
-    border: 1px solid var(--border);
-    background-color: color-mix(in srgb, var(--muted) 70%, transparent);
-    box-shadow: none;
+  .empty-panel-surface {
+    border: 1px solid color-mix(in srgb, var(--border) 82%, var(--foreground) 18%);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--background) 98%, var(--muted) 2%) 0%,
+        color-mix(in srgb, var(--background) 88%, var(--muted) 12%) 100%
+      );
+    box-shadow:
+      0 24px 48px -30px rgb(var(--store-ink-rgb) / 0.16),
+      inset 0 1px 0 var(--overlay-white-10);
   }
 
-  .admin-empty-icon {
-    border: 1px solid var(--border);
-    background-color: var(--card);
-    color: var(--muted-foreground);
-    box-shadow: none;
+  .empty-panel-icon {
+    border: 1px solid color-mix(in srgb, var(--border) 78%, var(--foreground) 22%);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--card) 100%, transparent) 0%,
+        color-mix(in srgb, var(--muted) 18%, var(--card) 82%) 100%
+      );
+    color: var(--foreground);
+    box-shadow:
+      var(--shadow-md),
+      inset 0 1px 0 var(--overlay-white-10);
   }
 
-  .admin-link {
+  .action-link-accent {
     color: rgb(var(--store-accent-rgb));
     transition: color 180ms ease;
   }
 
-  .admin-link:hover {
+  .action-link-accent:hover {
     color: var(--foreground);
   }
 
-  .admin-spinner {
+  .spinner-accent {
     color: rgb(var(--store-accent-rgb));
   }
 }

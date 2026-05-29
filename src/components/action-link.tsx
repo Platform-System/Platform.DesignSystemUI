@@ -9,7 +9,7 @@ export function ActionLink({ emphasis = 'default', className, ...props }: Action
   return (
     <a
       className={cn(
-        'admin-link',
+        'action-link-accent',
         emphasis === 'strong' ? 'inline-flex items-center gap-1.5 font-bold' : 'shrink-0 text-muted-foreground',
         className
       )}

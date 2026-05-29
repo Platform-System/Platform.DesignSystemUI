@@ -9,7 +9,7 @@ export function InfoPanel({ subtle = false, className, ...props }: InfoPanelProp
   return (
     <div
       className={cn(
-        subtle ? 'admin-info-panel-subtle' : 'admin-info-panel',
+        subtle ? 'info-panel-surface--subtle' : 'info-panel-surface',
         className
       )}
       {...props}

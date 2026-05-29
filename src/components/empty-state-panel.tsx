@@ -10,7 +10,7 @@ export interface EmptyStatePanelProps extends React.HTMLAttributes<HTMLDivElemen
   description: string
   primaryActionNode?: React.ReactNode
   secondaryActionNode?: React.ReactNode
-  variant?: "default" | "admin"
+  variant?: "default" | "framed"
   panelClassName?: string
   iconClassName?: string
   descriptionClassName?: string
@@ -33,7 +33,7 @@ export function EmptyStatePanel({
     <div
       className={cn(
         "ds-glass-panel flex w-full max-w-none flex-col items-center rounded-[32px] px-6 py-20 text-center shadow-[0_16px_48px_rgb(0_0_0/0.1)]",
-        variant === "admin" && "admin-empty-panel",
+        variant === "framed" && "empty-panel-surface",
         panelClassName
       )}
       {...props}
@@ -43,13 +43,13 @@ export function EmptyStatePanel({
           variant="icon"
           className={cn(
             "store-surface-soft store-muted-text mx-auto flex h-20 w-20 items-center justify-center rounded-full shadow-[0_10px_28px_rgb(0_0_0/0.08)]",
-            variant === "admin" && "admin-empty-icon",
+            variant === "framed" && "empty-panel-icon",
             iconClassName
           )}
         >
           {icon}
         </EmptyMedia>
-        <EmptyTitle className="mt-5 text-xl font-semibold text-foreground">{title}</EmptyTitle>
+        <EmptyTitle className="text-xl font-semibold text-foreground">{title}</EmptyTitle>
         <EmptyDescription className={cn("store-muted-text mt-3 max-w-md leading-7", descriptionClassName)}>
           {description}
         </EmptyDescription>
