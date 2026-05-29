@@ -21,7 +21,7 @@ export function AppLinkItem({
   return (
     <Comp
       className={cn(
-        'app-link-item flex items-center gap-1.5 rounded-xl px-1.5 py-1.5 outline-none',
+        'app-link-item flex w-full items-center gap-1.5 rounded-xl border-0 px-1.5 py-1.5 outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0',
         inactive ? 'pointer-events-none cursor-not-allowed opacity-40' : 'cursor-pointer',
         className
       )}

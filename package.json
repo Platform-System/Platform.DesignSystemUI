@@ -1,6 +1,6 @@
 {
   "name": "@platform-system/design-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -112,6 +112,7 @@
     "./components/meta-chip": "./src/components/meta-chip.tsx",
     "./components/overlay-backdrop": "./src/components/overlay-backdrop.tsx",
     "./components/page-shell": "./src/components/page-shell.tsx",
+    "./components/platform-switcher-menu": "./src/components/platform-switcher-menu.tsx",
     "./components/record-card": "./src/components/record-card.tsx",
     "./components/section-header": "./src/components/section-header.tsx",
     "./components/section-panel": "./src/components/section-panel.tsx",
